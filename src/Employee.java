@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
 public class Employee {
-    static int[] id = new  int[10];
+   public static int[] number1 = new  int[10];
 
-      String name;
+    // Данные в массивы для тестовой работы
     public static String[] Employee = new String[]{"Думцева Дарья Васильевна",
             "Воловеповна Наталья Вячеславовна", "Потапов Иван Георгиевич",
             "Кутова Алла Григорьевна", "Гойзман Ася Алепаева", "Фаер Василий Иванович",
@@ -14,12 +14,12 @@ public class Employee {
     static int[] salary = new int[]{25643,34564,53452,12321,65478,34528,55464,
             44529,43675,63451};
 
-    public Employee (int id,String name,int department1,int salary1){
+    public Employee (int number,String name, int department1, int salary1){
         //this.name = name;
        // String[] Employee = new Employee[id]{String name }
-        Employee[id] = name;
-        department[id] = department1;
-        salary[id] = salary1;
+        Employee[number] = name;
+        department[number] = department1;
+        salary[number] = salary1;
 
     }
 
