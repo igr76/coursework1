@@ -8,7 +8,7 @@ public class EmoloyeeBook {
                     + Employee.department[i] + "  зарплата : " + Employee.salary[i]);
         }
     }
-     public int salaryAll(int x) {
+     public static int salaryAll(int x) {
         int summ = 0;
         for (int i = 0; i < Employee.salary.length; i++) {
             summ = summ + Employee.salary[i];
@@ -17,7 +17,7 @@ public class EmoloyeeBook {
         return summ;
     }
 
-     public void minimum() {
+     public static void minimum() {
         int  min = 100000000;
         for (int i = 0; i < Employee.salary.length; i++) {
             if (min > Employee.salary[i]) {
@@ -35,7 +35,7 @@ public class EmoloyeeBook {
     }
     public  void averageSalary() {
         int average = 0;
-        average = Action.salaryAll(0) / Employee.salary.length;
+        average = salaryAll(0) / Employee.salary.length;
         System.out.println("Средняя зарплата в месяце : " +  average);
     }
     public  void allStaff() {
@@ -115,16 +115,49 @@ public class EmoloyeeBook {
     public  void less(int x) {
         for (int i = 0; i < Employee.salary.length; i++) {
             if (x > Employee.salary[i]) {
-                System.out.println("Сотрудник :  " + Employee.Employee[i] + "id : " + Employee.number1[i] + " зарплата : " + Employee.salary[i]);
+                System.out.println("Сотрудник :  " + Employee.Employee[i] + "id : " + Employee.id[i] + " зарплата : " + Employee.salary[i]);
             }
         }
     }
     public  void more(int x) {
         for (int i = 0; i < Employee.salary.length; i++) {
             if (x <= Employee.salary[i]) {
-                System.out.println("Сотрудник :  " + Employee.Employee[i] + "id : " + Employee.number1[i] + " зарплата : " + Employee.salary[i]);
+                System.out.println("Сотрудник :  " + Employee.Employee[i] + "id : " + Employee.id[i] + " зарплата : " + Employee.salary[i]);
             }
         }
     }
+    // присвоение значение id
+    public  static void  id(int b) {
+        int a = 0;
+        for (int i = 0; i < Employee.id.length; i++) {
+            if (a < Employee.id[i]) {
+                a = Employee.id[i];
+            }
+            Employee.id[b] = a + 1;
+
+        }
+    }
+    // Добавить нового сотрудника
+    public  static void newStaff(String name, int department1, int salary1) {
+        for (int i = 0; i < Employee.department.length; i++) {
+            if (Employee.department[i] == 0) {
+                Employee z = new Employee(i,name,department1,salary1);
+                id(i);
+            }
+        }
+
+    }
+    //удалить сотрудника
+    public static void deleteStaff(int number) {
+        for (int i = 0; i < Employee.department.length; i++) {
+            if (Employee.id[i] == number) {
+                number = i;
+                Employee z = new Employee(number,"",0,0);
+
+            }
+        }
+
+    }
+
 
 }

@@ -1,9 +1,9 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        int[] id = new  int[10];
-        int c = 0, number =0;
-        id[0] = 1;
+
+                int c = 0, number =0;
+
         String []  Employee = new String[10];
         System.out.println("Введите действие :");
         System.out.println("1 :Ввод данных сотрудников");
@@ -30,6 +30,8 @@ public class Main {
                         break;
                     }
                     number ++;
+                    EmoloyeeBook.id(i);
+
 
                 }
                 break;
@@ -42,13 +44,14 @@ public class Main {
                 a = scan.nextInt();
                 switch (a) {
                     case 1:
-                        Action.allEmployee();
+
+                        EmoloyeeBook.allEmployee();
                         break;
                     case 2:
-                        Action.salaryAll(1);
+                        EmoloyeeBook.salaryAll(1);
                         break;
                     case 3:
-                        Action.minimum();
+                        EmoloyeeBook.minimum();
                         break;
                 }
                 //И так далее не буду расписывать все варианты
@@ -61,10 +64,28 @@ public class Main {
                 System.out.println("4 Изменить отдел.  ");
                 System.out.println("Введите число :");
                 a = scan.nextInt();
-                for (int i = 0; i < id.length; i++) {
+                switch (a) {
+                    case 1:
+                        System.out.println("Введите ФИО сотрудника :");
+                        Scanner scan1 = new Scanner(System.in);
+                        String name = scan1.nextLine();
+                        System.out.println("Введите отдел сотрудника :");
+                        int department1 = scan.nextInt();
+                        System.out.println("Введите зарплату сотрудника :");
+                        int salary1 = scan.nextInt();
 
+                        EmoloyeeBook.newStaff(name,department1,salary1);
+                        break;
+                    case 2:
+                        System.out.println("Введите id сотрудника :");
+                        int id1 = scan.nextInt();
+                        EmoloyeeBook.deleteStaff(id1);
+                        break;
+                    case 3:
 
+                        break;
                 }
+
 
         }
 

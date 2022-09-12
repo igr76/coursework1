@@ -1,25 +1,21 @@
 import java.util.Arrays;
 
 public class Employee {
-   public static int[] number1 = new  int[10];
+
+    public static int[] id = new int[10];
+    int number1 = 0;
 
     // Данные в массивы для тестовой работы
-    public static String[] Employee = new String[]{"Думцева Дарья Васильевна",
-            "Воловеповна Наталья Вячеславовна", "Потапов Иван Георгиевич",
-            "Кутова Алла Григорьевна", "Гойзман Ася Алепаева", "Фаер Василий Иванович",
-            "Иванов Григорий Алексеевич", "Головенько Анасиасия Александровна",
-            "Сидоров Иван Васильевич", "Михайло Ирина Анатольевна"};
+    public static String[] Employee = new String[10];
     //отделы сотрудников
-    static int[] department = new int[]{3,4,1,2,5,3,1,5,4,2,};
-    static int[] salary = new int[]{25643,34564,53452,12321,65478,34528,55464,
-            44529,43675,63451};
+    static int[] department = new int[10];
+    static int[] salary = new int[10];
 
-    public Employee (int number,String name, int department1, int salary1){
-        //this.name = name;
-       // String[] Employee = new Employee[id]{String name }
+    public  Employee (int number,String name, int department1, int salary1){
         Employee[number] = name;
         department[number] = department1;
         salary[number] = salary1;
+
 
     }
 
