@@ -1,68 +1,56 @@
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Employee {
 
-    public static int[] id = new int[10];
-    int number1 = 0;
+    public  int id ;
 
-    // Данные в массивы для тестовой работы
-    public static String[] Employee = new String[10];
+    public String name;
     //отделы сотрудников
-    static int[] department = new int[10];
-    static int[] salary = new int[10];
+    static double department ;
+    static int salary ;
 
-    public  Employee (int number,String name, int department1, int salary1){
-        Employee[number] = name;
-        department[number] = department1;
-        salary[number] = salary1;
+    public Employee(String name, int department, int salary){
+        this.name = name;
+        this.department = department;
+        this.salary = salary;
 
 
     }
 
-    public String[] getEmployee() {
-        return Employee;
+    public String getName() {
+        return name;
     }
 
-    public void setEmployee(String[] employee) {
-        Employee = employee;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int[] getSalary() {
+    public static int getSalary() {
         return salary;
     }
 
-    public void setSalary(int[] salary) {
-        this.salary = salary;
-    }
-
-    public int[] getDepartment() {
+    public static double getDepartment() {
         return department;
-    }
-
-    public void setDepartment(int[] department) {
-        this.department = department;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return Arrays.equals(Employee, employee.Employee) && Arrays.equals(department, employee.department) && Arrays.equals(salary, employee.salary);
+        Employee name1 = (Employee) o;
+        return id == name1.id && number1 == name1.number1 && Objects.equals(name, name1.name);
     }
 
     @Override
     public int hashCode() {
-        int result = Arrays.hashCode(Employee);
-        result = 31 * result + Arrays.hashCode(department);
-        result = 31 * result + Arrays.hashCode(salary);
-        return result;
+        return Objects.hash(id, number1, name);
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "Employee=" + Arrays.toString(Employee) +
+                "Employee=" + Arrays.toString(name.toCharArray()) +
                 '}';
     }
 
