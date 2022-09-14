@@ -1,9 +1,12 @@
+import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
-        String []  Employee = new String[10];
 
-        System.out.println("Hello world!");
-        //Action.allEmployee();
-        Action.averageSalary();
+    public static void main(String[] args) {
+        employee[0] = new Employee("iRA",2,23456);
+        employee[1] = new Employee("Наталья",4,47865);
+
+
+
+
     }
 }
