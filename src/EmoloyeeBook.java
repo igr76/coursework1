@@ -1,18 +1,18 @@
 public class EmoloyeeBook {
-    private static int[]  id = new int[10];
-        public static String[] employee = new String[10];
+
+private static Employee[] employee = new Employee[10];
 
     public static void allEmployee() {
         for (int i = 0; i < employee.length; i++) {
             System.out.println(employee[i]);
         }
     }
-     public static int salaryAll(int x) {
+     public static int salaryAll() {
         int summ = 0;
         for (int i = 0; i < employee.length; i++) {
             summ = summ + Employee.getSalary();
         }
-        if (x!=0) {System.out.println("Сумма всех зарплат в месяц : " +  summ);}
+       System.out.println("Сумма всех зарплат в месяц : " +  summ);
         return summ;
     }
 
@@ -25,16 +25,16 @@ public class EmoloyeeBook {
         } System.out.println("Минимальная зарплата в месяце : " +  min);
     }
      public void maximum() {
-        Employee  maximum = null;
+        Employee  max = null;
         for (int i = 0; i < employee.length; i++) {
             if (max < employee[i].getSalary()) {
-                maximum = employee[i];
+                max = employee[i];
             }
         } System.out.println("Максимальная зарплата в месяце : " +  max);
     }
     public  void averageSalary() {
         int average = 0;
-        average = salaryAll(0) / salary.length;
+        average = salaryAll() / Employee.salary.length;
         System.out.println("Средняя зарплата в месяце : " +  average);
     }
     public  void allStaff() {
@@ -46,12 +46,12 @@ public class EmoloyeeBook {
     // Повышенная сложность
 
     public  void indexing(int x) {
-        for (int i = 0; i < salary.length; i++) {
+        for (int i = 0; i < Employee.salary.length; i++) {
             salary[i] = salary[i] + salary[i]*x/100;
         }
     }
     public  void departmentMin(int x) {
-        int min =100000000;
+        double min =double.MAX_VALUE;
         for (int i = 0; i < department.length; i++) {
             if (x == department[i]) {
                 if (min > salary[i]) {
@@ -61,7 +61,7 @@ public class EmoloyeeBook {
         }  System.out.println("В отделе : " + x +  "Минимальная зарплата в месяце : " +  min);
     }
     public static void departmentMax(int x) {
-        int max =0;
+        double max = integer.MIN_VALUE;
         for (int i = 0; i < department.length; i++) {
             if (x == department[i]) {
                 if (max < salary[i]) {
